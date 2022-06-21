@@ -6,10 +6,10 @@
 const Zener_Buttons = require(`../../🗄server/Zener_Buttons`);
 const Zener_Static = require(`../../🗄server/Zener_Static`);
 const { MessageType, Mimetype } = require(`@adiwajshing/baileys`);
-const translate = require(`@vitalets/google-translate-api`);
 const cleanRF = require(`../../🗄server/cleanRF`);
-const ꜰᴜᴄᴋ = require(`../../🗄server/oShit`);
 const _𝔏𝔞𝔟_ = require(`../../🗄server/_𝔏𝔞𝔟_`);
+const ꜰᴜᴄᴋ = require(`../../🗄server/oShit`);
+const googleTTS = require(`google-tts-api`);
 var ᴋᴇɪᴇx = new RegExp(_𝔏𝔞𝔟_.FOXTROT, `g`);
 var ᴋᴇɪ = /\/\^\[(.*)+\]\/\g/g.exec(ᴋᴇɪᴇx)[1];
 const vers = require(`../../package.json`);
@@ -20,7 +20,7 @@ var newScpt = scriptName.slice(0, -3).toLowerCase();
 `|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
 module.exports = {
 name: newScpt,
-ƈօʀȶǟռǟӄǟɨʐօ: `*${ᴋᴇɪ}tr* _text_ | _language code_`,
+ƈօʀȶǟռǟӄǟɨʐօ: `*${ᴋᴇɪ}tts* _text_ | _language code_`,
 async handle(ӄʀǟӄɨռʐ, chat, ƈօʀȶǟռǟ, Needs, ꜱɪᴛʀᴀᴘ, Clock, Ping) {
 try {
 var աɦօֆɛռȶɦǟȶ = ƈօʀȶǟռǟ.sender;
@@ -29,7 +29,7 @@ var աɦօֆɛռȶɦǟȶռʊʍ = աɦօֆɛռȶɦǟȶ
 .substring(0, աɦօֆɛռȶɦǟȶ.length - 15)
 .replace(/[+ ]/g, "");
 const FinalName = defaultnm.charAt(0).toUpperCase() + defaultnm.slice(1);
-`|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐂𝐨𝐫𝐭𝐚𝐧𝐚𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
+`|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
 const Bagde = require(`../../🍃goose/badge`);
 const ms = require(`parse-ms`);
 Bagde.findOne(
@@ -50,7 +50,7 @@ PermanentLimitTime: 43200000,
 await newUser
 .save()
 .catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
-return Zener_Buttons.MIB(
+return Cortana_Buttons.MIB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -104,7 +104,7 @@ await userBadge
 .catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
 }
 }
-`|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐂𝐨𝐫𝐭𝐚𝐧𝐚𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
+`|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
 const hold = require(`../../🗄server/Hold`);
 hold.Hold(ƈօʀȶǟռǟ);
 `|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
@@ -126,8 +126,6 @@ chat,
 );
 }
 `|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
-var text = ``;
-var language = ``;
 if (Needs.length === 0) {
 var 𝓜Usage = ꜱɪᴛʀᴀᴘ.get(ƈօʀȶǟռǟ.commandName);
 var ᴍɪᴢᴜᴋɪᴍᴏʀᴇ =
@@ -144,66 +142,48 @@ chat,
 );
 }
 
-if (!ƈօʀȶǟռǟ.isReply) {
-try {
-var body = ƈօʀȶǟռǟ.body.split(`|`);
-text = body[0].replace(
-ƈօʀȶǟռǟ.body[0] + ƈօʀȶǟռǟ.commandName + ` `,
-``
-);
-var i = 0;
-while (body[1].split(` `)[i] == ``) {
-i++;
+let text = ``;
+let langCode = `en`;
+for (var i = 0; i < Needs.length; i++) {
+if (Needs[i] == `=`) {
+langCode = Needs[i + 1];
+break;
 }
-language = body[1].split(` `)[i];
-} catch (Error) {
-if (Error instanceof TypeError) {
-text = ƈօʀȶǟռǟ.body.replace(
-ƈօʀȶǟռǟ.body[0] + ƈօʀȶǟռǟ.commandName + ` `,
-``
-);
-language = `English`;
-}
-}
-} else if (ƈօʀȶǟռǟ.replyMessage) {
-text = ƈօʀȶǟռǟ.replyMessage;
-language = Needs[0];
-} else {
-await ӄʀǟӄɨռʐ
-.sendMessage(
-ƈօʀȶǟռǟ.chatId,
-`Please reply to a text message.`,
-MessageType.text,
-{ quoted: chat }
-)
-.catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
+text += Needs[i] + ` `;
 }
 
-if (text.length > 4000) {
+if (text.length > 200) {
 await ӄʀǟӄɨռʐ
 .sendMessage(
 ƈօʀȶǟռǟ.chatId,
-`*Total characters should be less than 4000.*\nTotal characters for current input were {}.`.format(
+`*Total characters should be less than 200.*\nTotal characters for current input were {}.`.format(
 text.length
 ),
 MessageType.text,
 { quoted: chat }
 )
 .catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
-}
-await translate(text, {
-to: language,
-}).then((res) => {
-ӄʀǟӄɨռʐ
+} else {
+const url = googleTTS.getAudioUrl(text, {
+lang: langCode,
+slow: false,
+host: `https://translate.google.com`,
+});
+console.log(url);
+await ӄʀǟӄɨռʐ
 .sendMessage(
 ƈօʀȶǟռǟ.chatId,
-`Translated From *${res.from.language.iso}* to> *${language}*
-${res.text}`,
-MessageType.text,
-{ quoted: chat }
+{
+url: url,
+},
+MessageType.audio,
+{
+quoted: chat,
+mimetype: Mimetype.mp4Audio,
+}
 )
 .catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
-});
+}
 }
 );
 `|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
