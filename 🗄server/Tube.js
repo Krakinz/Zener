@@ -3,26 +3,29 @@
 `|🛸|======================================================================================================⬡  𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛™`;
 `|🛸|`;
 `|🛸|`;
-const { sizeFormatter } = require(`human-readable`);
-exports.runtime = function (seconds) {
-seconds = Number(seconds);
-var d = Math.floor(seconds / (3600 * 24));
-var h = Math.floor((seconds % (3600 * 24)) / 3600);
-var Echat = Math.floor((seconds % 3600) / 60);
-var s = Math.floor(seconds % 60);
-var dDisplay = d > 0 ? d + (d == 1 ? ` day, ` : ` days, `) : ``;
-var hDisplay = h > 0 ? h + (h == 1 ? ` hour, ` : ` hours, `) : ``;
-var mDisplay =
-Echat > 0 ? Echat + (Echat == 1 ? ` minute, ` : ` minutes, `) : ``;
-var sDisplay = s > 0 ? s + (s == 1 ? ` second` : ` seconds`) : ``;
-return dDisplay + hDisplay + mDisplay + sDisplay;
-};
-
-exports.formatp = sizeFormatter({
-std: `JEDEC`,
-decimalPlaces: 2,
-keepTrailingZeroes: false,
-render: (literal, symbol) => `${literal} ${symbol}B`,
+const getVideoId = require("get-video-id");
+const ffmpeg = require("fluent-ffmpeg");
+const readline = require("readline");
+const ytdl = require("ytdl-core");
+const fs = require("fs");
+`|⬡===========================================|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |===========================================⬡|`;
+const { id } = getVideoId("https://youtu.be/UKunvvN2iCk?list=RDUKunvvN2iCk");
+let stream = ytdl(id);
+let start = Date.now();
+let YouTY = `${start}_${id}.mp4`;
+`|⬡===========================================|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |===========================================⬡|`;
+ffmpeg(stream)
+.videoBitrate(128)
+.save(`${__dirname}/${YouTY}`)
+.on("progress", (progress) => {
+readline.cursorTo(process.stdout, 0);
+process.stdout.write(`${progress.targetSize}kb downloaded`);
+})
+.on("end", () => {
+console.log(`Download Done In: ${(Date.now() - start) / 1000}s`);
+const Content = fs.readFileSync(YouTY);
+console.log(Content);
+return;
 });
 `|🛸|`;
 `|🛸|`;

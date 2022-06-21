@@ -3,27 +3,46 @@
 `|🛸|======================================================================================================⬡  𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛™`;
 `|🛸|`;
 `|🛸|`;
-const { sizeFormatter } = require(`human-readable`);
-exports.runtime = function (seconds) {
-seconds = Number(seconds);
-var d = Math.floor(seconds / (3600 * 24));
-var h = Math.floor((seconds % (3600 * 24)) / 3600);
-var Echat = Math.floor((seconds % 3600) / 60);
-var s = Math.floor(seconds % 60);
-var dDisplay = d > 0 ? d + (d == 1 ? ` day, ` : ` days, `) : ``;
-var hDisplay = h > 0 ? h + (h == 1 ? ` hour, ` : ` hours, `) : ``;
-var mDisplay =
-Echat > 0 ? Echat + (Echat == 1 ? ` minute, ` : ` minutes, `) : ``;
-var sDisplay = s > 0 ? s + (s == 1 ? ` second` : ` seconds`) : ``;
-return dDisplay + hDisplay + mDisplay + sDisplay;
+const fs = require(`fs`);
+global.APIs = {
+nrtm: "https://nurutomo.herokuapp.com",
+dzx: "https://api.dhamzxploit.my.id",
+xteam: "https://api.xteam.xyz",
+zahir: "https://zahirr-web.herokuapp.com",
+zeks: "https://api.zeks.xyz",
+pencarikode: "https://pencarikode.xyz",
+LeysCoder: "https://leyscoders-api.herokuapp.com",
+};
+global.APIKeys = {
+"https://api.xteam.xyz": "d90a9e986e18778b",
+"https://zahirr-web.herokuapp.com": "zahirgans",
+"https://api.zeks.xyz": "apivinz",
+"https://pencarikode.xyz": "pais",
+"https://leyscoders-api.herokuapp.com": "dappakntlll",
 };
 
-exports.formatp = sizeFormatter({
-std: `JEDEC`,
-decimalPlaces: 2,
-keepTrailingZeroes: false,
-render: (literal, symbol) => `${literal} ${symbol}B`,
-});
+global.packname = "KrakinzLab";
+global.author = "(c)Zener";
+
+global.API = (name, path = "/", query = {}, apikeyqueryname) =>
+(name in global.APIs ? global.APIs[name] : name) +
+path +
+(query || apikeyqueryname
+? "?" +
+new URLSearchParams(
+Object.entries({
+...query,
+...(apikeyqueryname
+? {
+[apikeyqueryname]:
+global.APIKeys[
+name in global.APIs ? global.APIs[name] : name
+],
+}
+: {}),
+})
+)
+: "");
 `|🛸|`;
 `|🛸|`;
 `|🛸|======================================================================================================⬡  𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛™`;
