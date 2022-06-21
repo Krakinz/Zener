@@ -30,7 +30,7 @@ async handle(ӄʀǟӄɨռʐ, chat, ƈօʀȶǟռǟ, Needs, ꜱɪᴛʀᴀᴘ, Cloc
 try {
 var աɦօֆɛռȶɦǟȶ = ƈօʀȶǟռǟ.sender;
 const defaultnm = ƈօʀȶǟռǟ.commandName;
-var Raw = await akaneko.nsfw.hentai();
+var Raw = await akaneko.nsfw.ass();
 var աɦօֆɛռȶɦǟȶռʊʍ = աɦօֆɛռȶɦǟȶ
 .substring(0, աɦօֆɛռȶɦǟȶ.length - 15)
 .replace(/[+ ]/g, "");
@@ -70,7 +70,7 @@ PermanentLimitTime: 43200000,
 await newUser
 .save()
 .catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
-return Zener_Buttons.MIB(
+return Cortana_Buttons.MIB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -156,7 +156,7 @@ chat,
 `
 ╔════◇🔱𝐂𝐨𝐦𝐦𝐚𝐧𝐝: _${ᴋᴇɪ}${FinalName}_
 ║🍄𝐇𝐞𝐧𝐭𝐚𝐢 𝐍𝐒𝐅𝐖
-║📞 𝐎𝐫𝐝𝐞𝐫𝐞𝐝𝐁𝐲: ✋🏽‍𝐊𝐨𝐧𝐢𝐜𝐡𝐢𝐰𝐚 @${աɦօֆɛռȶɦǟȶռʊʍ} (ᴀᴅᴍɪɴ)
+║📞 𝐎𝐫𝐝𝐞𝐫𝐞𝐝𝐁𝐲: 🪶 𝐇𝐞𝐲: @${աɦօֆɛռȶɦǟȶռʊʍ} (ᴀᴅᴍɪɴ)
 ╚════════════╝`,
 Raw
 );
@@ -168,7 +168,7 @@ chat,
 `
 ╔════◇🔱𝐂𝐨𝐦𝐦𝐚𝐧𝐝: _${ᴋᴇɪ}${FinalName}_
 ║🍄𝐇𝐞𝐧𝐭𝐚𝐢 𝐍𝐒𝐅𝐖
-║📞 𝐎𝐫𝐝𝐞𝐫𝐞𝐝𝐁𝐲: ✋🏽‍𝐊𝐨𝐧𝐢𝐜𝐡𝐢𝐰𝐚 @${աɦօֆɛռȶɦǟȶռʊʍ} 
+║📞 𝐎𝐫𝐝𝐞𝐫𝐞𝐝𝐁𝐲: 🪶 𝐇𝐞𝐲: @${աɦօֆɛռȶɦǟȶռʊʍ} 
 ╚════════════╝`,
 Raw
 );
@@ -182,7 +182,7 @@ return Zener_Buttons.MTB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
-`✋🏽‍𝐊𝐨𝐧𝐢𝐜𝐡𝐢𝐰𝐚 @${աɦօֆɛռȶɦǟȶռʊʍ},
+`🪶 𝐇𝐞𝐲: @${աɦօֆɛռȶɦǟȶռʊʍ},
 
 ╔════◇🔱𝐂𝐨𝐦𝐦𝐚𝐧𝐝: _${ᴋᴇɪ}${FinalName}_
 ║🤦🏻‍♀️ 𝐎𝐩𝐩𝐬𝐢𝐞: _Try Again Later._

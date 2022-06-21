@@ -3,8 +3,8 @@
 `|        (𝐜)𝐙𝐞𝐧𝐞𝐫 𝐀𝐈 𝐢𝐬 𝐚 𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩 𝐌𝐮𝐥𝐭𝐢𝐏𝐮𝐫𝐩𝐨𝐬𝐞-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐰𝐢𝐭𝐡 𝐌𝐨𝐝𝐞𝐫𝐚𝐭𝐢𝐨𝐧,𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐨𝐧 𝐚𝐧𝐝 𝟏𝟎𝟎+ 𝐦𝐨𝐫𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬!            |`;
 `|                                                                                                                        |`;
 `|⬡════════════════════════════════════════════|                            |═══════════════════════════════════════════⬡|`;
-const Zener_Buttons = require(`../../🗄server/Zener_Buttons`);
-const Zener_Static = require(`../../🗄server/Zener_Static`);
+const Cortana_Buttons = require(`../../🗄server/Zener_Buttons`);
+const Cortana_Static = require(`../../🗄server/Zener_Static`);
 const { MessageType, Mimetype } = require(`@adiwajshing/baileys`);
 const cleanRF = require(`../../🗄server/cleanRF`);
 const ꜰᴜᴄᴋ = require(`../../🗄server/oShit`);
@@ -30,7 +30,7 @@ async handle(ӄʀǟӄɨռʐ, chat, ƈօʀȶǟռǟ, Needs, ꜱɪᴛʀᴀᴘ, Cloc
 try {
 var աɦօֆɛռȶɦǟȶ = ƈօʀȶǟռǟ.sender;
 const defaultnm = ƈօʀȶǟռǟ.commandName;
-var Raw = await akaneko.nsfw.hentai();
+var Raw = await akaneko.nsfw.yuri();
 var աɦօֆɛռȶɦǟȶռʊʍ = աɦօֆɛռȶɦǟȶ
 .substring(0, աɦօֆɛռȶɦǟȶ.length - 15)
 .replace(/[+ ]/g, "");
@@ -42,7 +42,7 @@ if (
 !ƈօʀȶǟռǟ.isSenderDev &&
 !ƈօʀȶǟռǟ.isSenderGroupAdmin
 ) {
-return Zener_Buttons.MTB(
+return Cortana_Buttons.MTB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -70,7 +70,7 @@ PermanentLimitTime: 43200000,
 await newUser
 .save()
 .catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
-return Zener_Buttons.MIB(
+return Cortana_Buttons.MIB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -133,7 +133,7 @@ let time = ms(
 userBadge.PermanentLimitTime -
 (Date.now() - userBadge.CurrentLimitTime)
 );
-return Zener_Buttons.MTB(
+return Cortana_Buttons.MTB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -149,7 +149,7 @@ chat,
 console.log(Raw);
 try {
 if (ƈօʀȶǟռǟ.isGroup) {
-return Zener_Buttons.MIB(
+return Cortana_Buttons.MIB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -161,7 +161,7 @@ chat,
 Raw
 );
 } else {
-return Zener_Buttons.MIB(
+return Cortana_Buttons.MIB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -178,7 +178,7 @@ userBadge.Limits = userBadge.Limits + 1;
 await userBadge
 .save()
 .catch((Error) => ꜰᴜᴄᴋ.catch(Error, ӄʀǟӄɨռʐ, ƈօʀȶǟռǟ, chat));
-return Zener_Buttons.MTB(
+return Cortana_Buttons.MTB(
 ӄʀǟӄɨռʐ,
 chat,
 ƈօʀȶǟռǟ,
@@ -190,7 +190,6 @@ chat,
 ╚════════════╝`
 );
 }
-`|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;
 }
 );
 `|⬡════════════════════════════════════════════|  ™𝐊𝐫𝐚𝐤𝐢𝐧𝐳𝐋𝐚𝐛🛸𝐙𝐞𝐧𝐞𝐫 𝐀𝐈(𝐜) |════════════════════════════════════════════⬡|`;

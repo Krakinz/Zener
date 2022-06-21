@@ -30,7 +30,7 @@ async handle(ӄʀǟӄɨռʐ, chat, ƈօʀȶǟռǟ, Needs, ꜱɪᴛʀᴀᴘ, Cloc
 try {
 var աɦօֆɛռȶɦǟȶ = ƈօʀȶǟռǟ.sender;
 const defaultnm = ƈօʀȶǟռǟ.commandName;
-var Raw = await akaneko.nsfw.hentai();
+var Raw = await akaneko.nsfw.bdsm();
 var աɦօֆɛռȶɦǟȶռʊʍ = աɦօֆɛռȶɦǟȶ
 .substring(0, աɦօֆɛռȶɦǟȶ.length - 15)
 .replace(/[+ ]/g, "");
